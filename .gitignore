@@ -121,3 +121,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+#
+settings.json
+*.gz
+.DS_Store
+*.txt
