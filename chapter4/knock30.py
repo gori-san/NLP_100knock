@@ -13,7 +13,8 @@ def load_morpheme(path):
                 morpheme = {'surface':splited[0],'base':splited[7],'pos':splited[1],'pos1':splited[2]}
                 sentence.append(morpheme)
                 if splited[2] == '句点':
-                    result.append(sentence)
+                    result.append(sentence[:])
+                    sentence.clear()
     return result
 
 
