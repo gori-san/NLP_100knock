@@ -7,4 +7,7 @@ ans = []
 for sentence in result:
     for morpheme in sentence:
         if morpheme['pos'] == '動詞':
-            print(morpheme['base'])
+            # print(morpheme['base'])
+            ans.append(morpheme['base'])
+
+print(ans)

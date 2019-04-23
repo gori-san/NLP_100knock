@@ -7,4 +7,7 @@ ans = []
 for sentence in result:
     for morpheme in sentence:
         if morpheme['pos'] == '名詞' and morpheme['pos1'] == 'サ変接続':
-            print(morpheme)
+            # print(morpheme)
+            ans.append(morpheme)
+
+print(ans)
