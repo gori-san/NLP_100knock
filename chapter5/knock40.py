@@ -1,5 +1,6 @@
 import re
 
+
 class Morph:
     def __init__(self, surface, base, pos, pos1):
         self.surface = surface
@@ -14,7 +15,7 @@ class Morph:
 def get_morpheme_list(path):
     sentences = []
     morphemes = []
-    with open(path,'r',encoding='utf-8') as input_file:
+    with open(path, 'r', encoding='utf-8') as input_file:
         for line in input_file:
             line = line.rstrip()
             if line == 'EOS':
@@ -24,12 +25,12 @@ def get_morpheme_list(path):
             elif line[0] == '*':
                 pass
             else:
-                splited = re.split('[\t,]',line)
-                morpheme = Morph(splited[0],splited[7],splited[1],splited[2])
+                splited = re.split('[\t,]', line)
+                morpheme = Morph(splited[0], splited[7],
+                                 splited[1], splited[2])
                 morphemes.append(morpheme)
 
     return sentences
-
 
 
 if __name__ == "__main__":
