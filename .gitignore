@@ -128,3 +128,5 @@ settings.json
 *.gz
 .DS_Store
 *.txt
+*.mecab
+*.cabocha
