@@ -20,6 +20,12 @@ class Chunk:
                 surfaces += morph.surface
         return surfaces
 
+    def has_pos(self,pos):
+        for morph in self.morphs:
+            if morph.pos == pos:
+                return True
+        return False
+
 
 def get_chunks_list(path):
     sentences = []
