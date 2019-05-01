@@ -13,6 +13,13 @@ class Chunk:
             surfaces += morph.surface
         return f'{surfaces} {self.dst}'
 
+    def no_sign_surface(self):
+        surfaces = ''
+        for morph in self.morphs:
+            if morph.pos != '記号':
+                surfaces += morph.surface
+        return surfaces
+
 
 def get_chunks_list(path):
     sentences = []
