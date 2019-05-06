@@ -1,6 +1,7 @@
 import re
 from knock40 import Morph
 
+
 class Chunk:
     def __init__(self, morphs, dst, srcs):
         self.morphs = morphs
@@ -13,6 +14,12 @@ class Chunk:
             surfaces += morph.surface
         return f'{surfaces} {self.dst}'
 
+    def surface(self):
+        surfaces = ''
+        for morph in self.morphs:
+            surfaces += morph.surface
+        return surfaces
+
     def no_sign_surface(self):
         surfaces = ''
         for morph in self.morphs:
@@ -20,7 +27,7 @@ class Chunk:
                 surfaces += morph.surface
         return surfaces
 
-    def has_pos(self,pos):
+    def has_pos(self, pos):
         for morph in self.morphs:
             if morph.pos == pos:
                 return True
@@ -43,15 +50,16 @@ def get_chunks_list(path):
                 current_num = int(s[1])
                 dst = int(s[2][:-1])
                 if current_num not in chunks:
-                    chunks[current_num] = Chunk([],dst,[])
+                    chunks[current_num] = Chunk([], dst, [])
                 chunks[current_num].dst = dst
                 if dst != -1:
                     if dst not in chunks:
-                        chunks[dst] = Chunk([],-1,[])
+                        chunks[dst] = Chunk([], -1, [])
                     chunks[dst].srcs.append(current_num)
             else:
-                elements = re.split('[\t,]',line)
-                morph = Morph(elements[0],elements[7],elements[1],elements[2])
+                elements = re.split('[\t,]', line)
+                morph = Morph(elements[0], elements[7],
+                              elements[1], elements[2])
                 chunks[current_num].morphs.append(morph)
     return sentences
 
@@ -59,5 +67,5 @@ def get_chunks_list(path):
 if __name__ == "__main__":
     path = 'neko.txt.cabocha'
     sentences = get_chunks_list(path)
-    for i,chunk in enumerate(sentences[7]):
+    for i, chunk in enumerate(sentences[7]):
         print(f'{i}:{chunk}')
