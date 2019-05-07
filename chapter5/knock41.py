@@ -33,6 +33,19 @@ class Chunk:
                 return True
         return False
 
+    def get_allsurfaces_base(self, key, value):
+        surfaces = []
+        if key == 'pos':
+            for morph in self.morphs:
+                if morph.pos == value:
+                    surfaces.append(morph.base)
+            return surfaces
+        if key == 'pos1':
+            for morph in self.morphs:
+                if morph.pos1 == value:
+                    surfaces.append(morph.base)
+            return surfaces
+
 
 def get_chunks_list(path):
     sentences = []
