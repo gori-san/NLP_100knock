@@ -1,6 +1,5 @@
-import sys
 
-input_file_name = sys.argv[1]
+input_file_name = 'col1.txt'
 input_file = open(input_file_name, "r")
 
 lines = input_file.readlines()
@@ -16,3 +15,5 @@ for col1 in list_col1:
 
 for word, c in sorted(dic_col1.items(), key=lambda dic_col1: dic_col1[1], reverse=True):
     print(word.strip(), c)
+
+input_file.close()
