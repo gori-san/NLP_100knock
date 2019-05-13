@@ -46,6 +46,12 @@ class Chunk:
                     surfaces.append(morph.base)
             return surfaces
 
+    def get_sahensetuzoku_wo(self):
+        for i in range(len(self.morphs)-1):
+            if self.morphs[i].pos == '名詞' and self.morphs[i].pos1 == 'サ変接続' and self.morphs[i+1].surface == 'を' and self.morphs[i+1].pos == '助詞':
+                return self.morphs[i].surface + self.morphs[i+1].surface
+        return ''
+
 
 def get_chunks_list(path):
     sentences = []
