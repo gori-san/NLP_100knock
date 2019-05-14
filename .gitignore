@@ -132,3 +132,4 @@ settings.json
 *.cabocha
 *.png
 result_45_unix
+*.xml
