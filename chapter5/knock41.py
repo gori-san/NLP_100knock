@@ -52,6 +52,15 @@ class Chunk:
                 return self.morphs[i].surface + self.morphs[i+1].surface
         return ''
 
+    def get_word_conversion_surface(self, pos, s):
+        result = ''
+        for morph in self.morphs:
+            if morph.pos == pos:
+                result += s
+            elif morph.pos != '記号':
+                result += morph.surface
+        return result
+
 
 def get_chunks_list(path):
     sentences = []
