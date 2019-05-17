@@ -36,5 +36,8 @@ def get_morpheme_list(path):
 if __name__ == "__main__":
     path = 'neko.txt.cabocha'
     sentences = get_morpheme_list(path)
+    # for sentence in sentences[:20]:
+    #     for morph in sentence:
+    #         print(morph)
     for morpheme in sentences[2]:
         print(morpheme)
