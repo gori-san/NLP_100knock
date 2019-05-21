@@ -23,10 +23,10 @@ for sentence in tree.iterfind('.//sentences/sentence'):
         if (sentence_id, token_id) in replace_dic:
             end_id, representative = replace_dic[sentence_id, token_id]
             end_id_dic[end_id-1] += 1
-            print(f'「{representative}(', end='')
+            print(f'「{representative} (', end='')
         print(token.findtext('word'), end='')
         while end_id_dic[token_id] != 0:
-            print(')」', end='')
+            print(') 」', end='')
             end_id_dic[token_id] -= 1
         print(' ', end='')
     print('')
