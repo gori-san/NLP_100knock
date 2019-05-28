@@ -11,6 +11,9 @@ for sentence in tree.iterfind('.//sentences/sentence'):
             continue
         governor = dep.find('governor').text
         dependent = dep.find('dependent').text
-        edges.append((governor, dependent))
+        governor_id = dep.find('governor').get('idx')
+        dependent_id = dep.find('dependent').get('idx')
+        edges.append((f'{governor}_{governor_id}',
+                      f'{dependent}_{dependent_id}'))
     graph = pydot.graph_from_edges(edges, directed=True)
     graph.write_png(f'{sentence_id}.png')
