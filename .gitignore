@@ -137,3 +137,5 @@ result_45_unix
 *.neg
 *.pos
 *data
+feature
+sentiment
