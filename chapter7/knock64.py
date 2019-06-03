@@ -20,7 +20,7 @@ with gzip.open('artist.json.gz', 'rt', encoding='utf-8') as i_file:
 
     if batch:
         collection.insert_many(batch)
-    print(f'{i}件のデータを格納')
+    print(f'{i}件のデータを格納しました')
 
 for index in ['name', 'alias.name', 'tags.value', 'rating.value']:
     collection.create_index([index, pymongo.ASCENDING])
