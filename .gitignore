@@ -134,3 +134,6 @@ settings.json
 result_45_unix
 *.xml
 *_DB
+*.neg
+*.pos
+*data
