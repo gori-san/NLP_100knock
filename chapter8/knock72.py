@@ -34,6 +34,7 @@ def create_feature():
 
         joblib.dump(feature, 'feature')
         joblib.dump(sentiment, 'sentiment')
+        joblib.dump(vectorizer.vocabulary_, 'vocabulary')
 
 
 if __name__ == '__main__':
