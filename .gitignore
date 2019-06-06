@@ -142,3 +142,5 @@ sentiment
 model
 vocabulary
 name
+*_count
+count_*
