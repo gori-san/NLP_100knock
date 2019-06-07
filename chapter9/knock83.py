@@ -24,7 +24,7 @@ def main():
                 count_c[c] += 1
             pbar.update(1)
 
-    joblib.dump(count_c, 'count_tc', compress=True)
+    joblib.dump(count_tc, 'count_tc', compress=True)
     joblib.dump(count_t, 'count_t')
     joblib.dump(count_c, 'count_c')
     joblib.dump(n, 'n_count')
