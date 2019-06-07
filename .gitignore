@@ -144,3 +144,5 @@ vocabulary
 name
 *_count
 count_*
+*_tc
+*_index
