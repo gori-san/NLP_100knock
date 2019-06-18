@@ -147,3 +147,5 @@ count_*
 *_tc
 *_index
 X_*
+*.model
+*.npy
